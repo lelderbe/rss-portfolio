@@ -3,4 +3,6 @@
         "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     --ff-primary: "Mulish", var(--ff-system);
     --ff-secondary: "Oswald", var(--ff-system);
+
+    --f-body-base: 400 16px / 24px var(--ff-primary);
 }

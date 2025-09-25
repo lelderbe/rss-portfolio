@@ -2,5 +2,6 @@
 @import url("base/variables.css");
 
 body {
-    font-family: var(--ff-system);
+    /* font-family: var(--ff-system); */
+    font: var(--f-body-base);
 }

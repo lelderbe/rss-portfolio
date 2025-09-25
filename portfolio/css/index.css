@@ -1,7 +1,32 @@
-@import url("base/reset.css");
-@import url("base/variables.css");
+@import url("base/index.css");
+@import url("layout/index.css");
+@import url("components/index.css");
+
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     /* font-family: var(--ff-system); */
     font: var(--f-body-base);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    font: var(--f-heading-h1);
+}
+
+h2 {
+    font: var(--f-heading-h2);
+}
+
+h3 {
+    font: var(--f-heading-h3);
+}
+
+h4 {
+    font: var(--f-heading-h4);
 }

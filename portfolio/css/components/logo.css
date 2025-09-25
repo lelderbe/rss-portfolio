@@ -1,0 +1,9 @@
+.logo {
+    display: flex;
+    padding: 20px;
+}
+
+.logo__icon {
+    width: 20px;
+    height: 20px;
+}

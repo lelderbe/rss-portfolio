@@ -5,4 +5,17 @@
     --ff-secondary: "Oswald", var(--ff-system);
 
     --f-body-base: 400 16px / 24px var(--ff-primary);
+    --f-body-base-italic: italic 400 16px / 20px var(--ff-primary);
+    --f-body-decoration: 300 48px / 54px var(--ff-primary);
+    --f-body-small: 500 12px / 16px var(--ff-primary);
+
+    --f-component-base: 400 16px / 24px var(--ff-secondary);
+    --f-heading-h1: 300 116px / 132px var(--ff-secondary);
+    --f-heading-h2: 400 32px / 40px var(--ff-secondary);
+    --f-heading-h3: 400 20px / 28px var(--ff-secondary);
+    --f-heading-h4: 400 16px / 24px var(--ff-secondary);
+
+    --c-light: #ffffff;
+    --c-dark: #222222;
+    --c-accent: #ff3c3c;
 }

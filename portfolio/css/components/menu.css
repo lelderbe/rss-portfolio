@@ -1,0 +1,18 @@
+.menu {
+    display: flex;
+}
+
+.menu__item {
+    padding: 18px 20px;
+    font: var(--f-component-base);
+    text-transform: uppercase;
+}
+
+.menu__item > a {
+    color: var(--c-light);
+    text-decoration: none;
+}
+
+.menu__item > a:hover {
+    color: var(--c-accent);
+}

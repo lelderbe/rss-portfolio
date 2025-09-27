@@ -1,6 +1,6 @@
-@import url("base/index.css");
-@import url("layout/index.css");
-@import url("components/index.css");
+@import url('base/index.css');
+@import url('layout/index.css');
+@import url('components/index.css');
 
 html {
     scroll-behavior: smooth;
@@ -17,6 +17,7 @@ body {
 
 h1 {
     font: var(--f-heading-h1);
+    text-transform: uppercase;
 }
 
 h2 {
@@ -25,8 +26,14 @@ h2 {
 
 h3 {
     font: var(--f-heading-h3);
+    text-transform: uppercase;
 }
 
 h4 {
     font: var(--f-heading-h4);
+}
+
+.wrapper {
+    max-width: var(--desktop-width);
+    margin: 0 auto;
 }

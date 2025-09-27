@@ -1,5 +1,8 @@
 .header {
+    background-color: var(--c-dark);
+}
+
+.header > .wrapper {
     display: flex;
     justify-content: space-between;
-    background-color: var(--c-dark);
 }

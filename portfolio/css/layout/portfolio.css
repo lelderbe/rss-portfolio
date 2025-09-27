@@ -1,0 +1,9 @@
+.portfolio {
+    min-height: 914px;
+    color: var(--c-light);
+    background-color: var(--c-dark);
+}
+
+.portfolio > .wrapper {
+    padding: 60px 0;
+}

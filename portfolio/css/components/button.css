@@ -1,0 +1,10 @@
+.button {
+    width: 100%;
+    padding: 18px 20px;
+    font: var(--f-component-base);
+    color: var(--c-light);
+    text-transform: uppercase;
+    border: none;
+    background-color: var(--c-dark);
+    cursor: pointer;
+}

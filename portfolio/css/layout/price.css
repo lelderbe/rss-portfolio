@@ -1,0 +1,45 @@
+.price {
+}
+
+.price > .wrapper {
+    padding: 60px 20px;
+}
+
+.price h2 {
+    margin-bottom: 12px;
+}
+
+.price__cards {
+    display: grid;
+    min-height: 500px;
+    margin-top: 40px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.price__card {
+    display: flex;
+    padding: 23px;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid var(--c-dark);
+}
+
+.price__card ul {
+    margin: 12px 0;
+    margin-left: 14px;
+}
+
+.price__card li {
+    margin-bottom: 4px;
+    list-style-type: square;
+}
+
+.price__card li > span {
+    margin-left: -2px;
+}
+
+.card__footer > p {
+    margin-bottom: 12px;
+    font: var(--f-body-base-italic);
+}

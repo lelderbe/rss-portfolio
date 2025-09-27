@@ -1,0 +1,23 @@
+.about {
+    padding: 60px 20px;
+}
+
+.about > .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+.about .column {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.about img {
+    width: 440px;
+}
+
+.about h2 {
+    margin-bottom: 12px;
+}

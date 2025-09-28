@@ -25,6 +25,17 @@
         font: var(--f-component-base);
         border: 1px solid var(--c-dark);
 
+        &:focus {
+            outline: none;
+            border: 1px solid var(--c-accent);
+        }
+
+        @media (hover: hover) {
+            &:hover {
+                border: 1px solid var(--c-accent);
+            }
+        }
+
         @media (max-width: 1439px) {
             min-width: unset;
             width: 100%;
@@ -34,12 +45,6 @@
     & > input::placeholder {
         color: var(--c-disabled);
         text-transform: uppercase;
-    }
-
-    & > input:hover,
-    & > input:focus {
-        outline: none;
-        border: 1px solid var(--c-accent);
     }
 
     & > button {

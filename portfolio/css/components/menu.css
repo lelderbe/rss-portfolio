@@ -15,14 +15,16 @@
     padding: 18px 20px;
     font: var(--f-component-base);
     text-transform: uppercase;
-}
 
-.menu__item > a {
-    color: var(--c-light);
-    text-decoration: none;
-    transition: color 0.24s ease-out;
-}
+    > a {
+        color: var(--c-light);
+        text-decoration: none;
+        transition: color 0.24s ease-out;
 
-.menu__item > a:hover {
-    color: var(--c-accent);
+        @media (hover: hover) {
+            &:hover {
+                color: var(--c-accent);
+            }
+        }
+    }
 }

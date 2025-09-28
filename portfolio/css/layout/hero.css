@@ -92,13 +92,15 @@
     color: var(--c-light);
     transition: color 0.24s ease-out;
 
+    @media (hover: hover) {
+        &:hover {
+            color: var(--c-accent);
+        }
+    }
+
     @media (max-width: 767px) {
         display: none;
     }
-}
-
-.scroll-down:hover {
-    color: var(--c-accent);
 }
 
 .hero__col2 {

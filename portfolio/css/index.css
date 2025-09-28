@@ -5,6 +5,7 @@
 html {
     scroll-behavior: smooth;
     interpolate-size: allow-keywords;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {

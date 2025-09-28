@@ -8,9 +8,11 @@
     background-color: var(--c-dark);
     cursor: pointer;
     transition: color 0.24s ease-out, background-color 0.24s ease-out;
-}
 
-.button:hover {
-    color: var(--c-dark);
-    background-color: var(--c-accent);
+    @media (hover: hover) {
+        &:hover {
+            color: var(--c-dark);
+            background-color: var(--c-accent);
+        }
+    }
 }

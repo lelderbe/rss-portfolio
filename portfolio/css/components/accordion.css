@@ -18,6 +18,12 @@ details summary {
     list-style: none; /* Скрываем стандартный маркер */
     cursor: pointer;
     transition: color 0.24s ease-out;
+
+    @media (hover: hover) {
+        &:hover {
+            color: var(--c-accent);
+        }
+    }
 }
 
 details summary::-webkit-details-marker {
@@ -30,10 +36,6 @@ details summary::after {
     -webkit-mask: url('../../assets/accordion/plus.svg') no-repeat center / contain; /* сначала префикс */
     mask: url('../../assets/accordion/plus.svg') no-repeat center / contain; /* потом стандарт */
     background-color: currentColor;
-}
-
-details summary:hover {
-    color: var(--c-accent);
 }
 
 details[open] summary::after {

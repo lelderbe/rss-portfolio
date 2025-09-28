@@ -9,14 +9,16 @@
 
 .logo {
     transition: transform 0.24s ease-out;
-}
 
-.logo:hover {
-    transform: scale(1.1);
-}
+    @media (hover: hover) {
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
 
-.logo:active {
-    transform: scale(0.9);
+    &:active {
+        transform: scale(0.9);
+    }
 }
 
 .header nav {
@@ -31,11 +33,13 @@
     transition: color 0.24s ease-out;
     cursor: pointer;
 
+    @media (hover: hover) {
+        &:hover {
+            color: var(--c-accent);
+        }
+    }
+
     @media (max-width: 1439px) {
         display: block;
     }
-}
-
-.header__burger:hover {
-    color: var(--c-accent);
 }

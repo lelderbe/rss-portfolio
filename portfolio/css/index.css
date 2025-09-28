@@ -43,4 +43,14 @@ h4 {
     @media (max-width: 1439px) {
         max-width: var(--pad-width);
     }
+
+    @media (max-width: 767px) {
+        max-width: var(--mobile-width);
+    }
+}
+
+[data-not-m] {
+    @media (max-width: 767px) {
+        display: none;
+    }
 }

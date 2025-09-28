@@ -27,4 +27,8 @@
     @media (max-width: 1439px) {
         --f-heading-h1: 300 68px / 80px var(--ff-secondary);
     }
+
+    @media (max-width: 767px) {
+        --f-heading-h1: 300 56px / 64px var(--ff-secondary);
+    }
 }

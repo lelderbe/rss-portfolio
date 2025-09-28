@@ -11,18 +11,26 @@
 
 .price__cards {
     display: grid;
-    min-height: 500px;
     margin-top: 40px;
     grid-template-columns: repeat(4, 1fr);
     gap: 40px;
+
+    @media (max-width: 1439px) {
+        padding: 0 34px;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
 }
 
 .price__card {
     display: flex;
+    min-height: 500px;
+    max-height: 500px;
     padding: 23px;
     flex-direction: column;
     justify-content: space-between;
     border: 1px solid var(--c-dark);
+    overflow: hidden;
     transition: border 0.24s ease-out;
 }
 

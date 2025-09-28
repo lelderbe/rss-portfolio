@@ -39,4 +39,8 @@ h4 {
     max-width: var(--desktop-width);
     margin: 0 auto;
     overflow: hidden;
+
+    @media (max-width: 1439px) {
+        max-width: var(--pad-width);
+    }
 }

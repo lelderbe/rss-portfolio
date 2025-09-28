@@ -2,6 +2,10 @@
     display: flex;
 }
 
+.menu_center {
+    justify-content: center;
+}
+
 .menu__item {
     padding: 18px 20px;
     font: var(--f-component-base);
@@ -11,6 +15,7 @@
 .menu__item > a {
     color: var(--c-light);
     text-decoration: none;
+    transition: color 0.24s ease-out;
 }
 
 .menu__item > a:hover {

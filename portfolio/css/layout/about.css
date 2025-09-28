@@ -6,6 +6,10 @@
     padding: 60px 20px;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 40px;
+
+    @media (max-width: 1439px) {
+        grid-template-columns: 1fr;
+    }
 }
 
 .about .column {
@@ -16,8 +20,18 @@
 
 .about img {
     width: 440px;
+
+    @media (max-width: 1439px) {
+        width: 100%;
+    }
 }
 
 .about h2 {
     margin-bottom: 12px;
+}
+
+.about__image3 {
+    @media (max-width: 1439px) {
+        display: none;
+    }
 }

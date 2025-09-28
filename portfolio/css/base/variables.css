@@ -23,4 +23,8 @@
     --desktop-width: 1440px;
     --pad-width: 768px;
     --mobile-width: 380px;
+
+    @media (max-width: 1439px) {
+        --f-heading-h1: 300 68px / 80px var(--ff-secondary);
+    }
 }

@@ -1,11 +1,11 @@
 .portfolio {
-    min-height: 914px;
+    padding: 60px 0;
     color: var(--c-light);
     background-color: var(--c-dark);
 }
 
 .portfolio > .wrapper {
-    padding: 60px 20px;
+    padding: 0 20px;
 }
 
 .portfolio h2 {
@@ -16,6 +16,7 @@
     display: flex;
     margin-top: 40px;
     justify-content: center;
+    overflow: hidden;
 }
 
 .slider {

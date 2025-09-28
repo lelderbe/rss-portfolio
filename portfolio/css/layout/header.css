@@ -6,3 +6,36 @@
     display: flex;
     justify-content: space-between;
 }
+
+.logo {
+    transition: transform 0.24s ease-out;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.logo:active {
+    transform: scale(0.9);
+}
+
+.header nav {
+    @media (max-width: 1439px) {
+        display: none;
+    }
+}
+
+.header__burger {
+    display: none;
+    color: var(--c-light);
+    transition: color 0.24s ease-out;
+    cursor: pointer;
+
+    @media (max-width: 1439px) {
+        display: block;
+    }
+}
+
+.header__burger:hover {
+    color: var(--c-accent);
+}

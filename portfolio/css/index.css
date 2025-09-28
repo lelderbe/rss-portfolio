@@ -1,6 +1,6 @@
 @import url('base/index.css');
-@import url('layout/index.css');
 @import url('components/index.css');
+@import url('layout/index.css');
 
 html {
     scroll-behavior: smooth;
@@ -38,4 +38,5 @@ h4 {
 .wrapper {
     max-width: var(--desktop-width);
     margin: 0 auto;
+    overflow: hidden;
 }

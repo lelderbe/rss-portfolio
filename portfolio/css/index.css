@@ -4,6 +4,7 @@
 
 html {
     scroll-behavior: smooth;
+    interpolate-size: allow-keywords;
 }
 
 body {

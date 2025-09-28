@@ -1,0 +1,16 @@
+.faq {
+    min-height: 724px;
+    color: var(--c-light);
+    background-color: var(--c-dark);
+}
+
+.faq > .wrapper {
+    display: grid;
+    padding: 60px 20px;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.faq h2 {
+    margin-bottom: 12px;
+}

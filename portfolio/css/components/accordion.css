@@ -1,0 +1,43 @@
+details::details-content {
+    overflow: hidden;
+    transition: block-size 0.3s ease-out, content-visibility 0.3s ease-out allow-discrete;
+    block-size: 0; /* Or also:  height:0; */
+    border-bottom: 1px solid var(--c-light);
+}
+
+details[open]::details-content {
+    padding-bottom: 20px;
+    block-size: auto; /* Or also:  height:auto; */
+}
+
+details summary {
+    display: flex;
+    padding: 18px 0 17px 0;
+    justify-content: space-between;
+    text-transform: uppercase;
+    list-style: none; /* Скрываем стандартный маркер */
+    cursor: pointer;
+    transition: color 0.24s ease-out;
+}
+
+details summary::-webkit-details-marker {
+    display: none;
+}
+
+details summary::after {
+    content: '';
+    width: 24px;
+    -webkit-mask: url('../../assets/accordion/plus.svg') no-repeat center / contain; /* сначала префикс */
+    mask: url('../../assets/accordion/plus.svg') no-repeat center / contain; /* потом стандарт */
+    background-color: currentColor;
+}
+
+details summary:hover {
+    color: var(--c-accent);
+}
+
+details[open] summary::after {
+    content: '';
+    -webkit-mask: url('../../assets/accordion/minus.svg') no-repeat center / contain; /* сначала префикс */
+    mask: url('../../assets/accordion/minus.svg') no-repeat center / contain; /* потом стандарт */
+}

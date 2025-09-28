@@ -23,6 +23,7 @@
     flex-direction: column;
     justify-content: space-between;
     border: 1px solid var(--c-dark);
+    transition: border 0.24s ease-out;
 }
 
 .price__card:hover {

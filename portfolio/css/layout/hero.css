@@ -15,8 +15,7 @@
     align-items: center;
     gap: 12px;
     font: var(--f-body-small);
-    writing-mode: vertical-rl; /* Вертикальное письмо (сверху вниз) */
-    transform: rotate(180deg); /* Дополнительный поворот при необходимости */
+    writing-mode: sideways-lr;
 }
 
 .hero__copyright > div {

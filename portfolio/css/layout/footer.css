@@ -1,20 +1,29 @@
 .form-section > .wrapper {
-    display: flex;
     padding: 40px 20px 20px;
-    flex-direction: column;
-    align-items: center;
+}
+
+.form-section h3 {
+    text-align: center;
 }
 
 .form {
     display: flex;
+    width: 100%;
     margin-top: 20px;
+    justify-content: center;
     gap: 8px;
 
     & > input {
         min-width: 380px;
+        max-width: 380px;
         padding: 17px 11px;
         font: var(--f-component-base);
         border: 1px solid var(--c-dark);
+
+        @media (max-width: 1439px) {
+            min-width: unset;
+            width: 100%;
+        }
     }
 
     & > input::placeholder {
@@ -30,6 +39,7 @@
 
     & > button {
         min-width: 200px;
+        max-width: 200px;
     }
 }
 

@@ -2,6 +2,10 @@
     min-height: 724px;
     color: var(--c-light);
     background-color: var(--c-dark);
+
+    @media (max-width: 1439px) {
+        min-height: 840px;
+    }
 }
 
 .faq > .wrapper {
@@ -9,6 +13,10 @@
     padding: 60px 20px;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
+
+    @media (max-width: 1439px) {
+        grid-template-columns: 1fr;
+    }
 }
 
 .faq h2 {

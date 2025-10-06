@@ -3,6 +3,7 @@ let openedAccordion = Number(sessionStorage.getItem('openedAccordion')) || 0;
 document.addEventListener('DOMContentLoaded', () => {
     prepareBurger();
     prepareAccordions();
+    prepareModal();
 });
 
 function prepareBurger() {
@@ -57,13 +58,43 @@ function prepareAccordions() {
     });
 }
 
-console.log(`
-   ----------------------------
- <  Я эксперт в своей области)  >
-   ----------------------------
-          \\   ^__^
-           \\  (oo)\\_______
-              (__)\\       )\/\\
-                  ||----w |
-                  ||     ||
-`);
+function prepareModal() {
+    const modalBtnClose = document.querySelector('.modal-btn__close');
+    const modalOverlay = document.querySelector('.modal__overlay');
+    const modalContent = document.querySelector('.modal__content');
+    const orderButtons = document.querySelectorAll('button[data-order]');
+
+    orderButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+            modalOverlay.classList.add('show');
+            document.documentElement.style.overflow = 'hidden';
+        });
+    });
+
+    modalBtnClose.addEventListener('click', (e) => {
+        e.stopPropagation();
+        modalOverlay.classList.remove('show');
+        document.documentElement.style.overflow = '';
+    });
+
+    modalOverlay.addEventListener('click', (e) => {
+        e.stopPropagation();
+        modalOverlay.classList.remove('show');
+        document.documentElement.style.overflow = '';
+    });
+
+    modalContent.addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+}
+
+// console.log(`
+//    ----------------------------
+//  <  Я эксперт в своей области)  >
+//    ----------------------------
+//           \\   ^__^
+//            \\  (oo)\\_______
+//               (__)\\       )\/\\
+//                   ||----w |
+//                   ||     ||
+// `);

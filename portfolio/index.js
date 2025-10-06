@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     prepareBurger();
     prepareAccordions();
     prepareModal();
+    prepareSlider();
 });
 
 function prepareBurger() {
@@ -88,9 +89,53 @@ function prepareModal() {
     });
 }
 
+function prepareSlider() {
+    const leftSlideArea = document.querySelector('.slide__left');
+    const rightSlideArea = document.querySelector('.slide__right');
+    const container = document.querySelector('.portfolio__gallery');
+    const slider = document.querySelector('.slider');
+    console.log(leftSlideArea);
+    let id;
+    let scrollBy = 0;
+    let isDesktop = false;
+
+    const mediaQuery = window.matchMedia('(max-width: 1439px)');
+    isDesktop = !mediaQuery.matches;
+
+    if (!isDesktop) {
+        container.scrollLeft = (slider.scrollWidth - container.clientWidth) / 2;
+    }
+
+    leftSlideArea.addEventListener('mouseenter', () => {
+        id = setInterval(() => {
+            const rect = slider.getBoundingClientRect();
+            const leftBeyondAmount = Math.max(0, -rect.left);
+            scrollBy += Math.min(leftBeyondAmount, 10);
+            slider.style.transform = `translateX(${scrollBy}px)`;
+        }, 30);
+    });
+
+    rightSlideArea.addEventListener('mouseenter', () => {
+        id = setInterval(() => {
+            const rect = slider.getBoundingClientRect();
+            const rightBeyondAmount = Math.max(0, rect.right - window.innerWidth);
+            scrollBy -= Math.min(rightBeyondAmount, 10);
+            slider.style.transform = `translateX(${scrollBy}px)`;
+        }, 30);
+    });
+
+    leftSlideArea.addEventListener('mouseleave', () => {
+        clearInterval(id);
+    });
+
+    rightSlideArea.addEventListener('mouseleave', () => {
+        clearInterval(id);
+    });
+}
+
 // console.log(`
 //    ----------------------------
-//  <  Я эксперт в своей области)  >
+//  <  Я эксперт в своей области   >
 //    ----------------------------
 //           \\   ^__^
 //            \\  (oo)\\_______

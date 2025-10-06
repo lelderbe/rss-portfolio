@@ -14,7 +14,7 @@
                 <a class="logo" href="#">
                     <img class="logo__icon" src="assets/header/logo.png" alt="" />
                 </a>
-                <nav>
+                <nav id="menu">
                     <ul class="menu">
                         <li class="menu__item">
                             <a href="#about">about me</a>
@@ -34,7 +34,7 @@
                     </ul>
                 </nav>
                 <svg
-                    class="header__burger"
+                    class="burger-btn__open"
                     width="60"
                     height="60"
                     viewBox="0 0 60 60"
@@ -43,6 +43,31 @@
                 >
                     <rect x="28" y="25" width="12" height="2" fill="currentColor" />
                     <rect x="20" y="33" width="20" height="2" fill="currentColor" />
+                </svg>
+                <svg
+                    class="burger-btn__close hide"
+                    width="60"
+                    height="60"
+                    viewBox="0 0 60 60"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <rect
+                        x="25.8574"
+                        y="22.2218"
+                        width="20"
+                        height="2"
+                        transform="rotate(45 25.8574 22.2218)"
+                        fill="currentColor"
+                    />
+                    <rect
+                        x="24.4434"
+                        y="36"
+                        width="20"
+                        height="2"
+                        transform="rotate(-45 24.4434 36)"
+                        fill="currentColor"
+                    />
                 </svg>
             </div>
         </header>
@@ -350,6 +375,9 @@
             </div>
         </footer>
 
+        <div class="modal__overlay">
+            <div class="modal__content">form</div>
+        </div>
         <script src="index.js"></script>
     </body>
 </html>

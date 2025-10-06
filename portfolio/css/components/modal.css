@@ -1,0 +1,20 @@
+.modal__overlay {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(34, 34, 34, 0.6);
+}
+
+.modal__content {
+    position: relative;
+    min-width: 500px;
+    max-width: 500px;
+    min-height: 356px;
+    background-color: var(--c-light);
+}

@@ -1,5 +1,41 @@
 let openedAccordion = Number(sessionStorage.getItem('openedAccordion')) || 0;
 
+document.addEventListener('DOMContentLoaded', () => {
+    prepareBurger();
+    prepareAccordions();
+});
+
+function prepareBurger() {
+    const burgerMenuOpenBtn = document.querySelector('.burger-btn__open');
+    const burgerMenuCloseBtn = document.querySelector('.burger-btn__close');
+    const menuPanel = document.querySelector('#menu');
+
+    if (!burgerMenuOpenBtn || !burgerMenuCloseBtn || !menuPanel) {
+        return;
+    }
+
+    burgerMenuOpenBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        burgerMenuOpenBtn.classList.toggle('hide');
+        burgerMenuCloseBtn.classList.toggle('hide');
+        menuPanel.classList.toggle('open');
+        document.body.style.overflow = document.body.style.overflow === '' ? 'hidden' : '';
+    });
+
+    menuPanel.addEventListener('click', (e) => {
+        if (e.target.localName !== 'a') {
+            e.stopPropagation();
+        }
+    });
+
+    document.body.addEventListener('click', () => {
+        burgerMenuOpenBtn.classList.remove('hide');
+        burgerMenuCloseBtn.classList.add('hide');
+        menuPanel.classList.remove('open');
+        document.body.style.overflow = '';
+    });
+}
+
 function prepareAccordions() {
     const accordionsParent = document.querySelector('#accordions');
     const accordions = document.querySelectorAll('details[name="faq"]');
@@ -20,8 +56,6 @@ function prepareAccordions() {
         });
     });
 }
-
-prepareAccordions();
 
 console.log(`
    ----------------------------

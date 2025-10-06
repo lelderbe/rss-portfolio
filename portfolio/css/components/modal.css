@@ -4,11 +4,18 @@
     right: 0;
     top: 0;
     bottom: 0;
-    display: flex;
     display: none;
     align-items: center;
     justify-content: center;
     background-color: rgb(34, 34, 34, 0.6);
+
+    @media (max-width: 767px) {
+        padding: 0 20px;
+    }
+}
+
+.modal__overlay.show {
+    display: flex;
 }
 
 .modal__content {
@@ -16,5 +23,38 @@
     min-width: 500px;
     max-width: 500px;
     min-height: 356px;
+    padding: 60px;
     background-color: var(--c-light);
+
+    @media (max-width: 767px) {
+        min-width: 100%;
+        max-width: 100%;
+        padding: 60px 20px;
+    }
+
+    .form {
+        margin-top: 12px;
+        flex-direction: column;
+        align-items: center;
+
+        > button {
+            min-width: 100%;
+            max-width: 100%;
+        }
+    }
+}
+
+.modal-btn__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: var(--c-dark);
+    transition: color 0.24s ease-out;
+    cursor: pointer;
+
+    @media (hover: hover) {
+        &:hover {
+            color: var(--c-accent);
+        }
+    }
 }

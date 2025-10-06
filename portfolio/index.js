@@ -16,12 +16,23 @@ function prepareBurger() {
         return;
     }
 
+    const escapeHandler = (event) => {
+        if (event.key === 'Escape') {
+            burgerMenuOpenBtn.classList.remove('hide');
+            burgerMenuCloseBtn.classList.add('hide');
+            menuPanel.classList.remove('open');
+            document.body.style.overflow = '';
+            document.removeEventListener('keydown', escapeHandler);
+        }
+    };
+
     burgerMenuOpenBtn.addEventListener('click', (e) => {
         e.stopPropagation();
         burgerMenuOpenBtn.classList.toggle('hide');
         burgerMenuCloseBtn.classList.toggle('hide');
         menuPanel.classList.toggle('open');
         document.body.style.overflow = document.body.style.overflow === '' ? 'hidden' : '';
+        document.addEventListener('keydown', escapeHandler);
     });
 
     menuPanel.addEventListener('click', (e) => {
@@ -41,6 +52,10 @@ function prepareBurger() {
 function prepareAccordions() {
     const accordionsParent = document.querySelector('#accordions');
     const accordions = document.querySelectorAll('details[name="faq"]');
+
+    if (!accordionsParent || !accordions) {
+        return;
+    }
 
     if (openedAccordion !== -1) {
         accordionsParent.children[openedAccordion].setAttribute('open', '');
@@ -65,10 +80,23 @@ function prepareModal() {
     const modalContent = document.querySelector('.modal__content');
     const orderButtons = document.querySelectorAll('button[data-order]');
 
+    if (!modalBtnClose || !modalOverlay || !modalContent || !orderButtons) {
+        return;
+    }
+
+    const escapeHandler = (event) => {
+        if (event.key === 'Escape') {
+            modalOverlay.classList.remove('show');
+            document.documentElement.style.overflow = '';
+            document.removeEventListener('keydown', escapeHandler);
+        }
+    };
+
     orderButtons.forEach((button) => {
         button.addEventListener('click', () => {
             modalOverlay.classList.add('show');
             document.documentElement.style.overflow = 'hidden';
+            document.addEventListener('keydown', escapeHandler);
         });
     });
 
@@ -94,10 +122,13 @@ function prepareSlider() {
     const rightSlideArea = document.querySelector('.slide__right');
     const container = document.querySelector('.portfolio__gallery');
     const slider = document.querySelector('.slider');
-    console.log(leftSlideArea);
     let id;
     let scrollBy = 0;
     let isDesktop = false;
+
+    if (!container || !slider) {
+        return;
+    }
 
     const mediaQuery = window.matchMedia('(max-width: 1439px)');
     isDesktop = !mediaQuery.matches;
@@ -106,7 +137,7 @@ function prepareSlider() {
         container.scrollLeft = (slider.scrollWidth - container.clientWidth) / 2;
     }
 
-    leftSlideArea.addEventListener('mouseenter', () => {
+    leftSlideArea?.addEventListener('mouseenter', () => {
         id = setInterval(() => {
             const rect = slider.getBoundingClientRect();
             const leftBeyondAmount = Math.max(0, -rect.left);
@@ -115,7 +146,7 @@ function prepareSlider() {
         }, 30);
     });
 
-    rightSlideArea.addEventListener('mouseenter', () => {
+    rightSlideArea?.addEventListener('mouseenter', () => {
         id = setInterval(() => {
             const rect = slider.getBoundingClientRect();
             const rightBeyondAmount = Math.max(0, rect.right - window.innerWidth);
@@ -124,11 +155,11 @@ function prepareSlider() {
         }, 30);
     });
 
-    leftSlideArea.addEventListener('mouseleave', () => {
+    leftSlideArea?.addEventListener('mouseleave', () => {
         clearInterval(id);
     });
 
-    rightSlideArea.addEventListener('mouseleave', () => {
+    rightSlideArea?.addEventListener('mouseleave', () => {
         clearInterval(id);
     });
 }

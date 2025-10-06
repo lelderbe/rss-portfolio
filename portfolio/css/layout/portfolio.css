@@ -13,10 +13,16 @@
 }
 
 .portfolio__gallery {
+    position: relative;
     display: flex;
     margin-top: 40px;
     justify-content: center;
     overflow: hidden;
+
+    @media (max-width: 1439px) {
+        justify-content: unset;
+        overflow: auto;
+    }
 }
 
 .slider {
@@ -45,5 +51,29 @@
 
     .bottom {
         align-self: end;
+    }
+}
+
+.slide__left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30%;
+    height: 100%;
+
+    @media (max-width: 1439px) {
+        display: none;
+    }
+}
+
+.slide__right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30%;
+    height: 100%;
+
+    @media (max-width: 1439px) {
+        display: none;
     }
 }

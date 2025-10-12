@@ -14,15 +14,7 @@
 
 .portfolio__gallery {
     position: relative;
-    display: flex;
     margin-top: 40px;
-    justify-content: center;
-    overflow: hidden;
-
-    @media (max-width: 1439px) {
-        justify-content: unset;
-        overflow: auto;
-    }
 }
 
 .slider {
@@ -33,10 +25,17 @@
     grid-template-columns: 400px 220px 280px 400px 280px 220px 280px 400px 220px 280px 280px 400px;
     align-items: center;
     gap: 20px;
+    overflow: hidden;
+
+    @media (max-width: 1439px) {
+        scroll-snap-type: x mandatory;
+        overflow: auto;
+    }
 
     > img {
         width: 100%;
         object-fit: contain;
+        scroll-snap-align: center;
     }
 
     > img:nth-child(3),

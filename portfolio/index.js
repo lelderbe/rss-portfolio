@@ -122,55 +122,58 @@ function prepareSlider() {
     const rightSlideArea = document.querySelector('.slide__right');
     const container = document.querySelector('.portfolio__gallery');
     const slider = document.querySelector('.slider');
-    let id;
-    let scrollBy = 0;
-    let isDesktop = false;
 
     if (!container || !slider) {
         return;
     }
 
-    const mediaQuery = window.matchMedia('(max-width: 1439px)');
-    isDesktop = !mediaQuery.matches;
+    const directions = {
+        left: -1,
+        none: 0,
+        right: 1,
+    };
 
-    if (!isDesktop) {
-        container.scrollLeft = (slider.scrollWidth - container.clientWidth) / 2;
-    }
+    const SLIDE_STEP = 5;
+    let animationId;
+    let direction = directions.none;
+
+    slider.scrollLeft = (slider.scrollWidth - container.clientWidth) / 2;
+
+    const animateCarousel = () => {
+        slider.scrollLeft += direction * SLIDE_STEP;
+        if (direction !== directions.none) {
+            animationId = requestAnimationFrame(animateCarousel);
+        }
+    };
+
+    const start = () => {
+        if (!animationId) {
+            animationId = requestAnimationFrame(animateCarousel);
+        }
+    };
+
+    const stop = () => {
+        cancelAnimationFrame(animationId);
+        animationId = null;
+    };
 
     leftSlideArea?.addEventListener('mouseenter', () => {
-        id = setInterval(() => {
-            const rect = slider.getBoundingClientRect();
-            const leftBeyondAmount = Math.max(0, -rect.left);
-            scrollBy += Math.min(leftBeyondAmount, 10);
-            slider.style.transform = `translateX(${scrollBy}px)`;
-        }, 30);
+        direction = directions.left;
+        start();
     });
 
     rightSlideArea?.addEventListener('mouseenter', () => {
-        id = setInterval(() => {
-            const rect = slider.getBoundingClientRect();
-            const rightBeyondAmount = Math.max(0, rect.right - window.innerWidth);
-            scrollBy -= Math.min(rightBeyondAmount, 10);
-            slider.style.transform = `translateX(${scrollBy}px)`;
-        }, 30);
+        direction = directions.right;
+        start();
     });
 
     leftSlideArea?.addEventListener('mouseleave', () => {
-        clearInterval(id);
+        direction = directions.nothing;
+        stop();
     });
 
     rightSlideArea?.addEventListener('mouseleave', () => {
-        clearInterval(id);
+        direction = directions.nothing;
+        stop();
     });
 }
-
-// console.log(`
-//    ----------------------------
-//  <  Я эксперт в своей области   >
-//    ----------------------------
-//           \\   ^__^
-//            \\  (oo)\\_______
-//               (__)\\       )\/\\
-//                   ||----w |
-//                   ||     ||
-// `);
